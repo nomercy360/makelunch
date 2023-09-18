@@ -6,10 +6,15 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
+    "preview": "astro build && wrangler pages dev ./dist",
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^3.1.0"
+    "@astrojs/cloudflare": "^7.1.0",
+    "@astrojs/solid-js": "^3.0.1",
+    "@astrojs/tailwind": "^5.0.0",
+    "astro": "^3.1.0",
+    "astro-icon": "next",
+    "tailwindcss": "^3.0.24"
   }
 }

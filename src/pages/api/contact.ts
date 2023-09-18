@@ -5,7 +5,7 @@ export const POST: APIRoute = async ({request, locals}) => {
 
     const uuid = crypto.randomUUID()
 
-    const data = await request.json() as { name: string, email: string }
+    const data = await request.json() as { name: string, email: string, description?: string }
 
     if (!data.email || !data.name) {
         return new Response(JSON.stringify({message: "Contact is required"}), {
@@ -13,7 +13,6 @@ export const POST: APIRoute = async ({request, locals}) => {
             headers: {'Content-Type': 'application/json'}
         })
     }
-
 
     // @ts-ignore
     const runtime = locals.runtime;
@@ -35,12 +34,13 @@ export const POST: APIRoute = async ({request, locals}) => {
         });
 
         if (response.status !== 200) {
+            console.log(await response.json())
             const msg = JSON.stringify({message: "Something went wrong"})
             return new Response(msg, {status: 500, headers: {'Content-Type': 'application/json'}})
         }
     }
 
-    const message = `*New payment received*\n\n${data.name} ${data.email}`;
+    const message = `*New payment received*\n\n*From:* ${sanitize(data.name)} \n*Email:* ${sanitize(data.email)}\n*Description:* ${data.description ? sanitize(data.description) : 'No description'}`
 
     const chatId = import.meta.env.TELEGRAM_CHAT_ID;
     const botToken = import.meta.env.TELEGRAM_BOT_TOKEN;
@@ -78,6 +78,11 @@ export async function sendTelegramMessage({botToken, chatId, message}: {
     });
 
     return await response.json();
+}
+
+const sanitize = (str: string) => {
+    // To escape characters '_', '*', '`', '[' outside of an entity, prepend the characters '\' before them.
+    return str.replace(/[_*`\[]/g, '\\$&');
 }
 
 
@@ -142,11 +147,6 @@ const EmailTemplate = () => {
                 font-size: 20px !important; /* or whatever size you want */
                 line-height: 28px !important; /* or whatever size you want */
                 max-width: 280px !important;
-            }
-            
-            body {
-                min-height: 820px !important;
-                height: 820px !important;
             }
         }
 

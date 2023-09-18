@@ -1,24 +1,29 @@
 ---
 import {Icon} from "astro-icon/components";
+import Layout from "../../layouts/Layout.astro";
 ---
 
-<div class="block text-center md:pt-5 md:bg-background bg-white top-0 left-0 w-full inset-0 h-screen relative">
-    <div class="mx-auto md:w-1/2 w-full bg-white flex flex-col items-start justify-start h-full p-5 rounded-t-3xl">
-        <div class="flex flex-row justify-between items-start w-full">
-            <div class="flex flex-row items-start gap-4">
-                <Icon name="wave" class="stroke-black fill-black h-10 w-10"/>
-                <div class="text-start">
-                    <p class="text-[28px] leading-[32px] font-medium">
-                        We received your order
-                    </p>
-                    <p class="text-[28px] leading-[32px] font-medium text-gray">
-                        Give us some time to process it. We will answer you ASAP.
-                    </p>
+
+<Layout title="Encountered an issue">
+    <div class="block text-center md:pt-5 md:bg-background bg-white top-0 left-0 w-full inset-0 h-screen relative">
+        <div class="mx-auto md:w-1/2 w-full bg-white flex flex-col items-start justify-start h-full p-5 rounded-t-3xl">
+            <div class="flex flex-row justify-between items-start w-full">
+                <div class="flex flex-row items-start gap-4">
+                    <Icon name="wave" class="stroke-black fill-black h-10 w-10"/>
+                    <div class="text-start">
+                        <p class="text-[28px] leading-[32px] font-medium">
+                            We faced an issue
+                        </p>
+                        <p class="text-[28px] leading-[32px] font-medium text-gray">
+                            Contact us using <a class="underline" href="mailto:maxim@thegaas.co">email</a> or <a
+                                class="underline" href="https://t.me/nickaxel">telegram</a>
+                        </p>
+                    </div>
                 </div>
+                <a class="text-black p-2 -m-2" href="/">
+                    <Icon name="cancel" class="text-black h-6 w-6"/>
+                </a>
             </div>
-            <a class="text-black p-2 -m-2" href="/">
-                <Icon name="cancel" class="text-black h-6 w-6"/>
-            </a>
         </div>
     </div>
-</div>
+</Layout>
