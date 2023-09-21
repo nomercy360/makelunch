@@ -3,24 +3,17 @@ import Layout from '../layouts/Layout.astro';
 import {Icon} from 'astro-icon/components';
 import ProductCards from "../components/ProductCards.astro";
 import CardsSlideShow from "../components/CardsSlideShow.astro";
+import Hero from "../components/Hero.astro";
 ---
 
-<Layout title="Make Lunch - prepare your product for launch">
+<Layout title="Make Lunch - prepare your product for launch"
+        description="We help early-stage startups and founders to launch their products. We value speed, and have a proven track record.">
     <main class="bg-white p-5">
         <div class="grid md:grid-cols-2 gap-5">
-            <div class="flex flex-col items-start justify-start">
-                <h1 class="md:text-[44px] text-[28px] md:leading-[50px] leading-[36px] font-medium">
-                    Make Lunch
-                </h1>
-                <h3 class="md:text-[44px] text-[28px] md:leading-[50px] leading-[36px] font-medium text-gray">
-                    Build the product, we will help with the launch.
-                </h3>
-                <a class="md:static fixed transform bottom-5 left-1/2 -translate-x-1/2 md:translate-x-0 rounded-[50px] mt-5 text-white flex flex-row items-center space-x-1 text-[16px] font-medium bg-deepPurple h-9 pl-2.5 pr-3.5"
-                   href="mailto:maxim@thegaas.co">
-                    <Icon name="wave" class="w-6 h-6 fill-white stroke-white"/>
-                    Discuss
-                </a>
-                <img src="/hero.png" class="mt-10" alt="hero"/>
+            <div class="md:order-1 order-2 flex flex-col items-start justify-start">
+                <div class="md:block hidden">
+                    <Hero/>
+                </div>
                 <h4 class="text-[20px] leading-[32px] font-medium mt-5">
                     We work with underdogs
                 </h4>
@@ -57,6 +50,9 @@ import CardsSlideShow from "../components/CardsSlideShow.astro";
                     help clients build products and brands.
                 </p>
                 <CardsSlideShow/>
+            </div>
+            <div class="md:hidden block">
+                <Hero/>
             </div>
             <ProductCards/>
         </div>

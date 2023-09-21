@@ -13,12 +13,12 @@ const slideItems = [
 ]
 ---
 
-<div class='xs:min-h-none min-h-[340px] h-fit w-full rounded-[20px] relative bg-[#F8F8F8]'>
+<div class='xs:min-h-none min-h-[340px] h-fit w-full rounded-[20px] relative bg-[#F8F8F8] md:order-2 order-3'>
     {slideItems.map((slideItem, index) => (
             <div class={`slide slide-items fade ${index === 0 ? 'active' : ''}`}>
                 <img src={`/${slideItem.image}`} alt={slideItem} class="w-20 h-30 rounded-[20px] object-cover" width="80" height="120"/>
-                <p class="mt-4 text-[20px] leading-[32px] font-medium">{slideItem.name}</p>
-                <p class="mt-1 text-gray text-[20px] leading-[28px] font-medium">{slideItem.position}</p>
+                <p class="mt-4 md:text-[20px] text-[16px] md:leading-[32px] leading-[24px] font-medium">{slideItem.name}</p>
+                <p class="mt-1 text-gray md:text-[20px] text-[16px] md:leading-[32px] leading-[24px] font-medium">{slideItem.position}</p>
             </div>
 
     ))}

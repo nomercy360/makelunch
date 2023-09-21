@@ -1,27 +1,50 @@
 ---
 interface Props {
-	title: string;
+    title: string;
+    description: string;
 }
 
-const { title } = Astro.props;
+const {title, description} = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="icon" href="/favicon.png" type="image/png"/>
+    <meta name="description"
+          content={description}>
+    <meta name="keywords"
+          content="launch, producthunt, logo, free, design, presentation, website, product, indie hacking, bootstrapping, maker, startup, saas, web, app, developer, designer, entrepreneur, founder, business, marketing, landing, page">
+    <meta property="og:title" content={title}>
+    <meta property="og:description"
+          content={description}>
+    <meta property="og:image" content="https://makelunch.today/og.png">
+    <meta property="og:url" content="https://makelunch.today">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content={title}>
+    <meta name="twitter:description"
+          content={description}>
+    <meta name="twitter:image" content="https://makelunch.today/twitter.png">
+
+    <!-- Canonical URL (to avoid duplicate content issues) -->
+    <link rel="canonical" href="https://makelunch.today">
+
+    <meta name="generator" content={Astro.generator}/>
+    <title>{title}</title>
+    <script src=`https://statsy.observer/${import.meta.env.PUBLIC_STATSY_SCRIPT}.js` defer></script>
+</head>
+<body>
+<slot/>
+</body>
 </html>
 <style is:global>
-	body {
-		background-color: white;
-	}
+    body {
+        background-color: white;
+    }
 </style>
