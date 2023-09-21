@@ -1,7 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import PersonCard from '../components/PersonCard.astro';
 import {Icon} from 'astro-icon/components';
+import ProductCards from "../components/ProductCards.astro";
+import CardsSlideShow from "../components/CardsSlideShow.astro";
 ---
 
 <Layout title="Make Lunch - prepare your product for launch">
@@ -12,7 +13,7 @@ import {Icon} from 'astro-icon/components';
                     Make Lunch
                 </h1>
                 <h3 class="md:text-[44px] text-[28px] md:leading-[50px] leading-[36px] font-medium text-gray">
-                    Build the product, we will help with the launch. From product hunt to investors
+                    Build the product, we will help with the launch.
                 </h3>
                 <a class="md:static fixed transform bottom-5 left-1/2 -translate-x-1/2 md:translate-x-0 rounded-[50px] mt-5 text-white flex flex-row items-center space-x-1 text-[16px] font-medium bg-deepPurple h-9 pl-2.5 pr-3.5"
                    href="mailto:maxim@thegaas.co">
@@ -21,115 +22,43 @@ import {Icon} from 'astro-icon/components';
                 </a>
                 <img src="/hero.png" class="mt-10" alt="hero"/>
                 <h4 class="text-[20px] leading-[32px] font-medium mt-5">
-                    For free if possible
+                    We work with underdogs
                 </h4>
                 <p class="text-gray text-[20px] leading-[32px] font-medium">
-                    In the heart of every creator lies a dream — a vision to build, to innovate, and to share. We
-                    understand that journey, because we've walked it too. The hours of work, the silent struggles, and
-                    the joy of creating something unique.
+                    We collaborate with early-stage startups and founders, whether they are launching for the first
+                    time, or pivoting for the third.
                 </p>
                 <h4 class="text-[20px] leading-[32px] font-medium mt-5">
-                    For free
+                    We value speed
                 </h4>
                 <p class="text-gray text-[20px] leading-[32px] font-medium">
-                    In the heart of every creator lies a dream — a vision to build, to innovate, and to share. We
-                    understand that journey, because we've walked it too. The hours of work, the silent struggles, and
-                    the joy of creating something unique.
+                    We don't have any big corporate vibes here. We hop on a call together, develop a plan, and execute
+                    it as quickly as possible, mostly communicating via messengers.
                 </p>
                 <h4 class="text-[20px] leading-[32px] font-medium mt-5">
-                    For free
+                    Free when possible
                 </h4>
                 <p class="text-gray text-[20px] leading-[32px] font-medium">
-                    In the heart of every creator lies a dream — a vision to build, to innovate, and to share. We
-                    understand that journey, because we've walked it too. The hours of work, the silent struggles, and
-                    the joy of creating something unique.
+                    Twice a week, we offer assistance to young founders to help them improve. Take advantage of our
+                    services for free, and all we ask in return is for you to acknowledge our contribution to your
+                    journey.
                 </p>
-                <div class="grid md:grid-cols-3 grid-cols-2 gap-8 mt-5">
-                    <PersonCard name="John Doe" description="Engineer & Architect"/>
-                    <PersonCard name="John Doe" description="Engineer & Architect"/>
-                    <PersonCard name="John Doe" description="Engineer & Architect"/>
-                    <PersonCard name="John Doe" description="Engineer & Architect"/>
-                    <PersonCard name="John Doe" description="Engineer & Architect"/>
-                    <PersonCard name="John Doe" description="Engineer & Architect"/>
-                </div>
                 <h4 class="text-[20px] leading-[32px] font-medium mt-5">
-                    For free
+                    Proven track record
                 </h4>
-                <p class="text-gray text-[20px] leading-[32px] font-medium mb-3">
-                    In the heart of every creator lies a dream — a vision to build, to innovate, and to share. We
-                    understand that journey, because we've walked it too. The hours of work, the silent struggles, and
-                    the joy of creating something unique.
+                <p class="text-gray text-[20px] leading-[32px] font-medium">
+                    We have launched our own startups and helped clients from around the world in earning millions.
                 </p>
+                <h4 class="text-[20px] leading-[32px] font-medium mt-5">
+                    Made by Gemss
+                </h4>
+                <p class="text-gray text-[20px] leading-[32px] font-medium  mb-5">
+                    Gemss is a small collective of founders, engineers, designers, managers, and financial advisors who
+                    help clients build products and brands.
+                </p>
+                <CardsSlideShow/>
             </div>
-            <div class="flex flex-col items-start justify-start">
-                <a class="rounded-[20px] w-full p-5 flex flex-col items-start justify-start bg-softPink pb-28"
-                   href="/checkout?plan=1">
-                    <div class="w-full flex flex-row justify-between items-start mb-8">
-                        <div class="max-w-md">
-                            <h4 class="text-[28px] leading-[32px] font-medium">
-                                Healthy launch
-                            </h4>
-                            <p class="text-lightGray text-[28px] leading-[32px] font-medium">
-                                Just a little support and a presentation for a cup of coffee
-                            </p>
-                        </div>
-                        <div class="flex items-center justify-center text-white rounded-[16px] bg-black px-3 h-9 text-[16px] leading-[20px] tracking-[1px] uppercase">
-                            Free
-                        </div>
-                    </div>
-                    <p class="text-[16px] leading-[20px] font-medium">
-                        • Pre-launch review
-                    </p>
-                    <p class="text-lightGray text-[16px] leading-[20px] font-medium mb-4">
-                        We’ll help to formulate key messages and find
-                    </p>
-                    <p class="text-[16px] leading-[20px] font-medium">
-                        • Product Hunt Presentation
-                    </p>
-                    <p class="text-lightGray text-[16px] leading-[20px] font-medium mb-4">
-                        Just a couple of reviews</p>
-                    <p class="text-[16px] leading-[20px] font-medium">
-                        • Product Hunt Community Support
-                    </p>
-                    <p class="text-lightGray text-[16px] leading-[20px] font-medium mb-4">
-                        Just a couple of reviews
-                    </p>
-                    <p class="text-[16px] leading-[20px] font-medium">
-                        • Product Hunt Community Support
-                    </p>
-                    <p class="text-lightGray text-[16px] leading-[20px] font-medium mb-4">
-                        Just a couple of reviews
-                    </p>
-                </a>
-                <a class="-mt-10 rounded-[20px] flex flex-row justify-between items-start w-full p-5 bg-pastelPurple pb-28"
-                   href="/checkout">
-                    <div class="max-w-md">
-                        <h4 class="text-[28px] leading-[32px] font-medium">
-                            Branded launch
-                        </h4>
-                        <p class="text-softPurple text-[28px] leading-[32px] font-medium">
-                            One-pager and a quick logo to stand out from the crowd
-                        </p>
-                    </div>
-                    <div class="flex items-center justify-center text-white rounded-[16px] bg-black px-3 h-9 text-[16px] leading-[20px] tracking-[1px] uppercase">
-                        150$
-                    </div>
-                </a>
-                <a class="-mt-10 rounded-[20px] flex flex-row justify-between items-start w-full p-5 bg-mutedPink pb-28"
-                   href="mailto:maxim@thegaas.co">
-                    <div class="max-w-md">
-                        <h4 class="text-[28px] leading-[32px] font-medium">
-                            Healthy launch
-                        </h4>
-                        <p class="text-darkPink text-[28px] leading-[32px] font-medium">
-                            Just a little support and a presentation for a cup of coffee
-                        </p>
-                    </div>
-                    <div class="flex items-center justify-center text-white rounded-[16px] bg-black px-3 h-9 text-[16px] leading-[20px] tracking-[1px] uppercase">
-                        Custom
-                    </div>
-                </a>
-            </div>
+            <ProductCards/>
         </div>
     </main>
 
