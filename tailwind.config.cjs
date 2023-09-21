@@ -3,8 +3,12 @@ module.exports = {
     content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
     theme: {
         extend: {
+            fontFamily: {
+                inter: ['Inter', 'sans-serif'],
+            },
             colors: {
                 background: '#F6F6F6',
+                accent: '#5E58F6',
                 brown: {
                     bg: {
                         DEFAULT: '#F4EAE9',
