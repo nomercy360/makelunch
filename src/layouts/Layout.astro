@@ -44,7 +44,16 @@ const {title, description} = Astro.props;
 </body>
 </html>
 <style is:global>
+    @font-face {
+        font-display: swap;
+        font-family: 'PP Neue Montreal';
+        font-style: normal;
+        font-weight: 300;
+        src: url('/fonts/PPNeueMontreal-Medium.woff2') format('woff2');
+    }
+
     body {
         background-color: white;
+        font-family: 'PP Neue Montreal', sans-serif;
     }
 </style>
